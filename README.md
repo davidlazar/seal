@@ -97,3 +97,9 @@ url: github.com
 username: davidlazar
 clipboard: lQBphTfTTaafOEFCJHc4udEJYvAe99eJ
 ```
+
+## Related work
+
+* [Pick](https://github.com/bndw/pick): Minimal password manager for macOS and Linux
+* [Pwclip](https://github.com/davidlazar/pwclip): Hash-based password manager
+
