@@ -72,7 +72,7 @@ func readPW(file string) {
 	}
 	msg, err := seal.Open(privateKey, ctxt)
 	if err != nil {
-		log.Printf("error decrypting %s: %s", file, err)
+		log.Fatalf("error decrypting %s: %s", file, err)
 	}
 
 	var clip []byte
