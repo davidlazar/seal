@@ -87,8 +87,15 @@ func readPW(file string) {
 	}
 
 	if clip != nil {
+		done, err := clipboard.SetClipboardTemporarily(clip, 10*time.Second)
+		if err != nil {
+			log.Fatalf("error setting clipboard: %s", err)
+		}
 		fmt.Fprintf(os.Stderr, "Password copied to clipboard for 10 seconds.\n")
-		clipboard.SetClipboardTemporarily(clip, 10*time.Second)
+		err = <-done
+		if err != nil {
+			log.Fatalf("error resetting clipboard: %s", err)
+		}
 	}
 }
 
